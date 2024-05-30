@@ -60,6 +60,7 @@ const Button = styled.button`
 const TagInput = styled.input`
   border: none;
   cursor: text;
+  background-color: #f3f4f6;
 `;
 
 const Tag = () => {

@@ -49,8 +49,9 @@ function AddItemForm() {
             />
           </div>
           <div className="itemTitle mainSection">
-            <p>상품명</p>
+            <p className="sectionTitle">상품명</p>
             <input
+              className="addItemInput"
               name="title"
               value={values.title}
               onChange={handleInputChange}
@@ -58,7 +59,7 @@ function AddItemForm() {
             />
           </div>
           <div className="itemContent mainSection">
-            <p>상품 소개</p>
+            <p className="sectionTitle">상품 소개</p>
             <textarea
               name="content"
               value={values.content}
@@ -67,8 +68,9 @@ function AddItemForm() {
             />
           </div>
           <div className="itemPrice mainSection">
-            <p>판매 가격</p>
+            <p className="sectionTitle">판매 가격</p>
             <input
+              className="addItemInput"
               name="price"
               type="number"
               value={values.price}

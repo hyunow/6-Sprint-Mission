@@ -1,4 +1,4 @@
-.Header {
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -7,7 +7,7 @@
   border-bottom: solid 1px #dfdfdf;
 }
 
-.Nav {
+.nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,12 +15,12 @@
   gap: 40px;
 }
 
-.HeaderLogo {
+.headerLogo {
   width: 153px;
   height: 51px;
 }
 
-.자유게시판 {
+.headerNav1 {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.48px;
@@ -28,7 +28,7 @@
   color: #4b5563;
 }
 
-.중고마켓 {
+.headerNav2 {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.48px;
@@ -36,7 +36,7 @@
   color: #3692ff;
 }
 
-.LoginButton {
+.loginButton {
   width: 88px;
   height: 42px;
   padding: 12px 23px;
