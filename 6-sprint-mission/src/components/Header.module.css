@@ -20,7 +20,7 @@
   height: 51px;
 }
 
-.headerNav1 {
+.freeBoard {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.48px;
@@ -28,7 +28,7 @@
   color: #4b5563;
 }
 
-.headerNav2 {
+.usedMarket {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.48px;

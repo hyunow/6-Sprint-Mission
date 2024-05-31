@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import LoginHeader from '../../components/LoginHeader'
+import LoginHeader from '../../components/HeaderForMember'
 import HorizonLine from '../../components/HorizontalLine'
 import { Link, useParams } from 'react-router-dom'
 import arrowImg from './images/arrow.png'

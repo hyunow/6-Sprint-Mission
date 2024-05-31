@@ -1,34 +1,45 @@
-import { useState } from "react";
-import Header from "../../components/LoginHeader";
-import "./AddItemPage.css";
-import FileInput from "./FileInput";
-import Tag from "./Tag";
+import { useState } from 'react'
+import Header from '../../components/HeaderForMember'
+import './AddItemPage.css'
+import FileInput from './FileInput'
 
 function AddItemForm() {
+  const [tags, setTags] = useState([])
+
   const [values, setValues] = useState({
     imgFile: null,
-    title: "",
-    content: "",
-    price: "",
-    tag: "",
-  });
+    title: '',
+    content: '',
+    price: '',
+    tag: '',
+  })
 
   const handleChange = (name, value) => {
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
-    }));
-  };
+    }))
+  }
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    handleChange(name, value);
-  };
+    const { name, value } = e.target
+    handleChange(name, value)
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("submit~!");
-  };
+    e.preventDefault()
+    alert('submit~!')
+  }
+
+  const addTag = (tag) => {
+    if (!tags.includes(tag)) {
+      setTags([...tags, tag])
+    }
+  }
+
+  const removeTag = (tagToRemove) => {
+    setTags(tags.filter((tag) => tag !== tagToRemove))
+  }
 
   return (
     <div className="AddItemPage">
@@ -79,12 +90,12 @@ function AddItemForm() {
             />
           </div>
           <div className="itemTag mainSection">
-            <Tag />
+            <p>Tag 자리</p>
           </div>
         </div>
       </form>
     </div>
-  );
+  )
 }
 
 function AddItemPage() {
@@ -93,7 +104,7 @@ function AddItemPage() {
       <Header />
       <AddItemForm />
     </>
-  );
+  )
 }
 
-export default AddItemPage;
+export default AddItemPage
