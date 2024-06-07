@@ -17,14 +17,14 @@ export async function getProducts(params = {}) {
   }
 }
 
-export async function getItemsDetail(itemId) {
-  if (!itemId) {
+export async function getItemDetail(productId) {
+  if (!productId) {
     throw new Error('Invalid product ID')
   }
 
   try {
     const response = await fetch(
-      `https://panda-market-api.vercel.app/product/${itemId}`
+      `https://panda-market-api.vercel.app/products/${productId}`
     )
     if (!response) {
       throw new Error(`HTTP error: ${response.status}`)
@@ -33,6 +33,22 @@ export async function getItemsDetail(itemId) {
     return body
   } catch (error) {
     console.log('Failed to fetch product detail:', error)
+    throw error
+  }
+}
+
+export async function getItemComments({ productId, limit }) {
+  try {
+    const response = await fetch(
+      `https://panda-market-api.vercel.app/products/${productId}/comments?limit=${limit}`
+    )
+    if (!response) {
+      throw new Error(`HTTP error: ${response.status}`)
+    }
+    const body = await response.json()
+    return body
+  } catch (error) {
+    console.log('Failed to fetch product comments:', error)
     throw error
   }
 }
