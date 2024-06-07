@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Tag({ tags, onAddTag, onRemoveTag }) {
+function TagInput({ tags, onAddTag, onRemoveTag }) {
   const [input, setInput] = useState('')
 
   const onPressEnter = (e) => {
@@ -15,8 +15,12 @@ function Tag({ tags, onAddTag, onRemoveTag }) {
       setInput('') // 태그 추가 후 input field 초기화
     }
   }
-
-  return <></>
+  return (
+    <div>
+      <p>태그</p>
+      <input className="tagInput" placeholder="태그를 입력해주세요" />
+    </div>
+  )
 }
 
-export default Tag
+export default TagInput

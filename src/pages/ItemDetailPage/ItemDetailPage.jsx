@@ -3,7 +3,7 @@ import { getItemDetail } from '../../api'
 import { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import ItemDetailSection from './components/ItemDetailSection'
-import styles from './ItemDetail.module.css'
+import styles from './ItemDetailPage.module.css'
 import HorizonLine from '../../components/HorizontalLine'
 import CommentSection from './components/CommentSection'
 

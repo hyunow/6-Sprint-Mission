@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from '../../components/HeaderForMember'
 import './AddItemPage.css'
 import FileInput from './FileInput'
+import TagInput from '../../components/TagInput'
 
 function AddItemForm() {
   const [tags, setTags] = useState([])
@@ -90,7 +91,7 @@ function AddItemForm() {
             />
           </div>
           <div className="itemTag mainSection">
-            <p>Tag 자리</p>
+            <TagInput />
           </div>
         </div>
       </form>

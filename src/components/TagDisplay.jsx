@@ -1,4 +1,4 @@
-import styles from '../styles/TagDisplay.module.css'
+import styles from './TagDisplay.module.css'
 
 function TagDisplay({ tags }) {
   return (

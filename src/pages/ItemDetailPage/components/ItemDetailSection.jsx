@@ -1,7 +1,7 @@
 import HorizonLine from '../../../components/HorizontalLine'
 import styles from '../styles/ItemDetailSection.module.css'
 import heartIcon from '../../../images/ic_heart.png'
-import TagDisplay from './TagDisplay'
+import TagDisplay from '../../../components/TagDisplay'
 
 function ItemDetailSection({ item }) {
   return (

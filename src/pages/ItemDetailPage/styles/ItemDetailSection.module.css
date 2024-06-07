@@ -28,13 +28,6 @@
   border-radius: 16px;
 }
 
-/* .itemDetail {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-} */
-
 .itemName {
   font-size: 24px;
   font-weight: 600;
