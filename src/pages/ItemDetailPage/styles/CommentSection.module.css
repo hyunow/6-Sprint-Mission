@@ -41,7 +41,11 @@
   padding: 12px 23px;
   border-radius: 8px;
   opacity: 0px;
-  background-color: #9ca3af;
+  background-color: #3692ff;
   color: #ffffff;
   border: none;
+}
+
+.button:disabled {
+  background-color: #9ca3af;
 }
