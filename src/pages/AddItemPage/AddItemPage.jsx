@@ -1,53 +1,62 @@
-import { useState } from 'react'
-import Header from '../../components/HeaderForMember'
-import './AddItemPage.css'
-import FileInput from './FileInput'
-import TagInput from '../../components/TagInput'
+import { useState } from "react";
+import Header from "../../components/HeaderForMember";
+import "./AddItemPage.css";
+import FileInput from "./FileInput";
+import TagInput from "../../components/TagInput";
 
 function AddItemForm() {
-  const [tags, setTags] = useState([])
+  const [tags, setTags] = useState([]);
 
   const [values, setValues] = useState({
     imgFile: null,
-    title: '',
-    content: '',
-    price: '',
-    tag: '',
-  })
+    title: "",
+    content: "",
+    price: "",
+    tag: "",
+  });
 
   const handleChange = (name, value) => {
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target
-    handleChange(name, value)
-  }
+    const { name, value } = e.target;
+    handleChange(name, value);
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    alert('submit~!')
-  }
+    e.preventDefault();
+    alert("submit~!");
+  };
 
   const addTag = (tag) => {
     if (!tags.includes(tag)) {
-      setTags([...tags, tag])
+      setTags([...tags, tag]);
     }
-  }
+  };
 
   const removeTag = (tagToRemove) => {
-    setTags(tags.filter((tag) => tag !== tagToRemove))
-  }
+    setTags(tags.filter((tag) => tag !== tagToRemove));
+  };
+
+  // form 제출 버튼 활성화
+  const isSubmitDisabled =
+    !values.title || !values.content || !values.price || !tags.length;
 
   return (
     <div className="AddItemPage">
-      <form onSubmit={handleSubmit}>
+      <form>
         <div className="AddItemPageHeader">
           <h1>상품 등록하기</h1>
-          <button className="register-button" type="submit">
+          <button
+            className="register-button"
+            type="submit"
+            disabled={isSubmitDisabled}
+            onClick={handleSubmit}
+          >
             등록
           </button>
         </div>
@@ -91,12 +100,12 @@ function AddItemForm() {
             />
           </div>
           <div className="itemTag mainSection">
-            <TagInput />
+            <TagInput tags={tags} onAddTag={addTag} onRemoveTag={removeTag} />
           </div>
         </div>
       </form>
     </div>
-  )
+  );
 }
 
 function AddItemPage() {
@@ -105,7 +114,7 @@ function AddItemPage() {
       <Header />
       <AddItemForm />
     </>
-  )
+  );
 }
 
-export default AddItemPage
+export default AddItemPage;
